@@ -1,18 +1,25 @@
-import { Widget } from './Widget/Widget';
+import { Counter } from './Widget/Widget';
+import { Component } from 'react';
 
-export const App = () => {
-  return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101',
-      }}
-    >
-    </div>
-    
-  );
-};
+export class App extends Component {
+  static defaultProps = {};
+
+  static propTypes = {};
+
+  render() {
+    return (
+      <div
+        style={{
+          height: '100vh',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          fontSize: 40,
+          color: '#010101',
+        }}
+      >
+        <Counter />
+      </div>
+    );
+  }
+}
