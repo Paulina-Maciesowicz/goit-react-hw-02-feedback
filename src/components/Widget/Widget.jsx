@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 export function Counter() {
-  // Zadeklaruj nową zmienną stanu, którą nazwiemy „count”
   const [count, setCount] = useState(0);
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
+  const total = count + neutral + bad;
+  const percentage = count / total ;
 
   return (
     <div>
@@ -15,26 +16,8 @@ export function Counter() {
       <p>Good: {count}</p>
       <p>Neutral: {neutral}</p>
       <p>Bad: {bad}</p>
+      <p>Total: {total}</p>
+      <p>Positive feedback: {percentage}</p>
     </div>
   );
 }
-// export const Widget = ({ click }) => {
-//   return (
-//     <div>
-//       <h2>Please leave feedback</h2>
-//       <button onClickGood={event => console.log(event)}>good</button>
-//       <button onClickNeutral={event => console.log(event)}>neutral</button>
-//       <button onClickBad={event => console.log(event)}>bad</button>
-//       <div>
-//         <h2>Statistics:</h2>
-//         {
-//           <>
-//             <p>Good: {click}</p>
-//             <p>Neutral: {click}</p>
-//             <p>Bad: {click}</p>
-//           </>
-//         }
-//       </div>
-//     </div>
-//   );
-// };
