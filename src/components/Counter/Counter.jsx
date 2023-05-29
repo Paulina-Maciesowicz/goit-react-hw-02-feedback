@@ -27,6 +27,9 @@ export class Counter extends React.Component {
   bad() {
     this.setState(prevStateBad => ({ bad: prevStateBad.bad + 1 }));
   }
+  total() { this.setState(prevStateTotal => ({
+    prevStateTotal: prevStateTotal.good + prevStateTotal.neutral
+   + prevStateTotal.bad})); }
   // decrement() {
   //   this.setState ({ counter: this.state.counter - 1})
   // }
@@ -45,6 +48,7 @@ export class Counter extends React.Component {
           <li>good {this.state.good}</li>
           <li>neutral {this.state.neutral}</li>
           <li>bad {this.state.bad}</li>
+          <li>total {this.state.total}</li>
         </ul>
       </>
     );
