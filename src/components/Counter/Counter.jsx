@@ -31,7 +31,7 @@ export class Counter extends React.Component {
     return this.state.good + this.state.neutral + this.state.bad;
   }
   percent() {
-    return this.state.good / this.state.neutral + this.state.bad * 100;
+    return this.state.good / (this.state.neutral + this.state.bad) * 100;
   }
 
   // decrement() {
