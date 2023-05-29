@@ -1,10 +1,19 @@
-import { Counter } from './Widget/Widget';
+import { Counter } from './Counter/Counter';
+import { List } from './List/List';
 import { Component } from 'react';
 
 export class App extends Component {
-  static defaultProps = {};
+  // constructor(props) {
+  //   super(props);
+  // }
 
-  static propTypes = {};
+  static defaultProps = {
+    name: 'React',
+  };
+
+  static propTypes = {
+    name: String,
+  };
 
   render() {
     return (
@@ -19,6 +28,7 @@ export class App extends Component {
         }}
       >
         <Counter />
+        <List contents={['good', 'neutral', 'bad']} />
       </div>
     );
   }
