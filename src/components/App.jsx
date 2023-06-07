@@ -1,5 +1,5 @@
 import { Counter } from './Counter/Counter';
-import { List } from './List/List';
+// import { List } from './List/List';
 import { Component } from 'react';
 
 export class App extends Component {
