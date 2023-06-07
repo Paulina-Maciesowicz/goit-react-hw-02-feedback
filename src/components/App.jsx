@@ -28,7 +28,7 @@ export class App extends Component {
         }}
       >
         <Counter />
-        <List contents={['good', 'neutral', 'bad']} />
+        {/* <List contents={['good', 'neutral', 'bad']} /> */}
       </div>
     );
   }

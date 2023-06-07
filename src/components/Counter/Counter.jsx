@@ -52,6 +52,7 @@ export class Counter extends React.Component {
         <button onClick={this.good}>good</button>
         <button onClick={this.neutral}>neutral</button>
         <button onClick={this.bad}>bad</button>
+        <h2>Statisctic</h2>
         <ul>
           <li>good {this.state.good}</li>
           <li>neutral {this.state.neutral}</li>

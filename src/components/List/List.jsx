@@ -19,7 +19,6 @@ export class List extends Component {
   render() {
     return (
       <>
-        <h2>Statisctic</h2>
         <ul>
           {this.list.map((elementListy, indeks) => (
             <li key={indeks}>{elementListy}</li>
