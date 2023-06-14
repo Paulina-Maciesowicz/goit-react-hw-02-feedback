@@ -1,5 +1,5 @@
 import React from 'react';
-import { List } from 'components/List/List';
+// import { List } from 'components/List/List';
 
 export class Counter extends React.Component {
   // eslint-disable-next-line no-useless-constructor
@@ -17,15 +17,15 @@ export class Counter extends React.Component {
     bad: 0,
   };
 
-  // handleIncrement = optionName =>
+  // handleIncrement = allBtn =>
   //   onClick = { handleClick } -> onClick={ () => handleClick(option) }
-    
-    (handleIncrement = evt => {
-      const allButtons = evt.target.innerHTML;
-      this.setState(state => ({
-        [allButtons]: state[allButtons] + 1,
-      }));
-    });
+
+  handleIncrement = evt => {
+    const allButtons = evt.target.innerHTML;
+    this.setState(state => ({
+      [allButtons]: state[allButtons] + 1,
+    }));
+  };
 
   good() {
     this.setState(prevStateGood => ({ good: prevStateGood.good + 1 }));
