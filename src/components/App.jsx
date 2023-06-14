@@ -1,5 +1,4 @@
 import { Counter } from './Counter/Counter';
-// import { List } from './List/List';
 import { Component } from 'react';
 
 export class App extends Component {
@@ -28,7 +27,7 @@ export class App extends Component {
         }}
       >
         <Counter />
-        {/* <List contents={['good', 'neutral', 'bad']} /> */}
+        
       </div>
     );
   }

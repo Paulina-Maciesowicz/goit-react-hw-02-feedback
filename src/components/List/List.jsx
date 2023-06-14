@@ -2,9 +2,6 @@ import React from 'react';
 import { Component } from 'react';
 
 export class List extends Component {
-  //   constructor(props) {
-  //     super(props);
-  //   }
 
   static defaultProps = {
     contents: [],
@@ -21,7 +18,9 @@ export class List extends Component {
       <>
         <ul>
           {this.list.map((elementListy, indeks) => (
-            <li key={indeks}>{elementListy}</li>
+            <li key={indeks}>
+              <button onClick={this.state.elementListy}>{elementListy}</button>
+            </li>
           ))}
         </ul>
       </>

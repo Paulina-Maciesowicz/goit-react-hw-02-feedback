@@ -1,4 +1,5 @@
 import React from 'react';
+import { List } from 'components/List/List';
 
 export class Counter extends React.Component {
   // eslint-disable-next-line no-useless-constructor
@@ -15,6 +16,16 @@ export class Counter extends React.Component {
     neutral: 0,
     bad: 0,
   };
+
+  // handleIncrement = optionName =>
+  //   onClick = { handleClick } -> onClick={ () => handleClick(option) }
+    
+    (handleIncrement = evt => {
+      const allButtons = evt.target.innerHTML;
+      this.setState(state => ({
+        [allButtons]: state[allButtons] + 1,
+      }));
+    });
 
   good() {
     this.setState(prevStateGood => ({ good: prevStateGood.good + 1 }));
@@ -49,17 +60,26 @@ export class Counter extends React.Component {
           Please leave feedback
           {/* {this.state.counter} */}
         </h2>
-        <button onClick={this.good}>good</button>
-        <button onClick={this.neutral}>neutral</button>
-        <button onClick={this.bad}>bad</button>
-        <h2>Statisctic</h2>
-        <ul>
-          <li>good {this.state.good}</li>
-          <li>neutral {this.state.neutral}</li>
-          <li>bad {this.state.bad}</li>
-          <li>total {this.total()}</li>
-          <li>percent {this.percent()}%</li>
-        </ul>
+        {/* <List contents={['good', 'neutral', 'bad']} /> */}
+        <button onClick={this.handleIncrement}>good</button>
+        <button onClick={this.handleIncrement}>neutral</button>
+        <button onClick={this.handleIncrement}>bad</button>
+
+        {this.total() > 0 ? (
+          <>
+            <h2>Statisctic</h2>
+
+            <ul>
+              <li>good {this.state.good}</li>
+              <li>neutral {this.state.neutral}</li>
+              <li>bad {this.state.bad}</li>
+              <li>total {this.total()}</li>
+              <li>percent {this.percent()}%</li>
+            </ul>
+          </>
+        ) : (
+          <p>There is no feedback.</p>
+        )}
       </>
     );
   }
